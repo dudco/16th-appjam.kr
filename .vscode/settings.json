@@ -1,0 +1,8 @@
+{
+    "emmet.includeLanguages": {
+        "vue-html": "html"
+    },
+    "vetur.colorDecorators.enable": true,
+    "vetur.validation.template": true,
+    "git.ignoreLimitWarning": true
+}
