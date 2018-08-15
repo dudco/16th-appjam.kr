@@ -1,5 +1,7 @@
 <template>
     <div class="test">
+        <clock />
+        <!-- <sheet-btn /> -->
     </div>
 </template>
 
@@ -15,6 +17,8 @@ export default class App extends Vue {
 </script>
 
 <style>
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
 html {
     height: 100%;
 }
@@ -24,7 +28,7 @@ body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #11161d;
 }
 
 .test {
@@ -33,5 +37,8 @@ body {
     background-image: url("./static/images/background.png");
     background-position: center;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
