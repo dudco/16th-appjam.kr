@@ -1,7 +1,8 @@
 <template>
     <div class="test">
-        <clock />
-        <!-- <sheet-btn /> -->
+        <clock :deadLine="'Aug 19 2018 08:30:00 GMT+0900 (한국 표준시)'" />
+        <sheet-btn />
+        <star />
     </div>
 </template>
 
@@ -12,6 +13,9 @@ import {Component, Vue} from 'vue-property-decorator';
 export default class App extends Vue {
     created(): void {
         console.log('created!!');
+    }
+    beforeCreate(): void {
+        console.log('beforeCreate!!');
     }
 }
 </script>

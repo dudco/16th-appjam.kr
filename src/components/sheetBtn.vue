@@ -1,7 +1,7 @@
 <template>
     <div class="sheet-btn">
-        <div>image</div>
-        <div class="text">Click to here</div>
+        <img src="../static/images/click-btn.png" alt="">
+        <img src="../static/images/cth.png" alt="">
     </div>
 </template>
 
@@ -15,13 +15,24 @@ export default class SheetBtn extends Vue {
 </script>
 
 <style lang="scss">
-.text {
-    font-size: 30px;
-    background: -webkit-linear-gradient(to right, #cf59ba, #4d57d0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 .sheet-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
+    bottom: 0%;
+    margin-bottom: 45px;
+    & > img {
+        &:nth-child(1) {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 23px;
+        }
+
+        &:nth-child(2) {
+            width: 129px;
+            height: 18px;
+        }
+    }
 }
 </style>
