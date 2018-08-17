@@ -1,6 +1,6 @@
 <template>
     <div class="test">
-        <clock :deadLine="'Aug 19 2018 08:30:00 GMT+0900 (한국 표준시)'" />
+        <clock :deadLine="'Sun Aug 19 2018 08:30:00 GMT+0900 (한국 표준시)'" />
         <sheet-btn :btnClick="sheetBtnClick" :isShow="showBoard"/>
         <board :show="showBoard"/>
         <star />

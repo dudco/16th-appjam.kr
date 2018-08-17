@@ -73,7 +73,7 @@ export default class Clock extends Vue {
         return Math.floor(this.diff / 60) % 60
     }
     get hours() {
-        return Math.floor(this.diff / 60 / 60) % 24
+        return Math.floor(this.diff / 60 / 60)
     }
 
     clickPlayBtn() {

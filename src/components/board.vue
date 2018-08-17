@@ -1,5 +1,5 @@
 <template>
-    <div class="board" :class="{show, leave: !show}">
+    <div class="board" :class="{'show': isShow, 'leave': isLeave}">
         <div class="board-nav">
             <span @click="clickMenu(1)" :class="{select: selected == 1}">주제확인</span>
             <span @click="clickMenu(2)" :class="{select: selected == 2}">최종 결과물 제출</span>
@@ -167,18 +167,20 @@
     </div>    
 </template>
 <script lang="ts">
-import {Vue, Component, Prop} from 'vue-property-decorator';
+import {Vue, Component, Prop, Watch} from 'vue-property-decorator';
 
 @Component
 export default class Board extends Vue {
     @Prop()
     show!: boolean
+    isAnim: boolean = false;
 
     selected = 1;
     subSelected = 1;
-    
+
     created() {
-        console.log(this.show);
+        // document.addEventListener('animationstart', this.animationStart)
+        document.addEventListener('animationend', this.animationEnd)
     }
     clickMenu(value: number) {
         this.selected = value;
@@ -187,33 +189,51 @@ export default class Board extends Vue {
     clickSubMenu(value: number) {
         this.subSelected = value;
     }
+
+    @Watch('show')
+    onChangeShow(value: boolean) {
+        this.isAnim = true;
+    }
+    animationEnd() {
+        this.isAnim = false;
+    }
+
+    get isShow() {
+        return this.show
+    }
+    get isLeave() {
+        return this.isAnim && !this.show
+    }
 }
 </script>
 <style lang="scss">
-@keyframes fadeIn {
+@keyframes showAnim {
   from {
     opacity: 0;
+    transform: translate3d(0, 30%, 0);
+    visibility: visible;
   }
 
   to {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes fadeOut {
+@keyframes leaveAnim {
   from {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 
   to {
     opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 30%, 0);
   }
 }
 
 .board {
-    animation: fadeOut;
-    animation-duration: 2s;
-
     display: none;
     position: absolute;
     top: calc(50% - 300px);
@@ -397,8 +417,16 @@ export default class Board extends Vue {
     }
 }
 .show {
-  animation-name: fadeIn;
-  animation-duration: 2s;
+  animation-name: showAnim;
+  animation-duration: 1.5s;
   display: block;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.leave {
+  animation-name: leaveAnim;
+  animation-duration: 1.5s;
+  display: block;
+  -webkit-animation-fill-mode: forwards;
 }
 </style>
