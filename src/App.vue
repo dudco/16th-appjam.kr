@@ -18,7 +18,8 @@ export default class App extends Vue {
 
 <style>
 @import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
-
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+  
 html {
     height: 100%;
 }

@@ -69,7 +69,7 @@ export default class SheetBtn extends Vue {
         &:nth-child(1) {
             width: 70px;
             height: 70px;
-            margin-bottom: 23px;
+            margin-bottom: 15px;
         }
 
         &:nth-child(2) {
