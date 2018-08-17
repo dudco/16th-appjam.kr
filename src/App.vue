@@ -2,6 +2,7 @@
     <div class="test">
         <clock :deadLine="'Aug 19 2018 08:30:00 GMT+0900 (한국 표준시)'" />
         <sheet-btn />
+        <board />
         <star />
     </div>
 </template>
@@ -11,12 +12,7 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component
 export default class App extends Vue {
-    created(): void {
-        console.log('created!!');
-    }
-    beforeCreate(): void {
-        console.log('beforeCreate!!');
-    }
+    
 }
 </script>
 
@@ -44,5 +40,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 </style>
