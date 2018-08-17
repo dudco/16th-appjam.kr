@@ -1,5 +1,5 @@
 <template>
-    <div @click="btnClick" class="sheet-btn" :class="{'bounce': over}" v-on:mouseover="over = true" v-on:mouseout="over = false">
+    <div @click="btnClick" class="sheet-btn" :class="{'bounce': over, 'show-board': isShow}" v-on:mouseover="over = true" v-on:mouseout="over = false">
         <img src="../static/images/click-btn.png" alt="">
         <img src="../static/images/cth.png" alt="">
     </div>
@@ -10,12 +10,17 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class SheetBtn extends Vue {
+    @Prop()
+    btnClick!:() => void
+
+    @Prop()
+    isShow!: boolean
+
     over = false
     
-    btnClick() {
-        console.log("Click");
-        // show booad
-    }
+    // btnClick() {
+    //     console.log("Click");
+    // }
 }
 </script>
 
@@ -53,11 +58,6 @@ export default class SheetBtn extends Vue {
   }
 }
 
-.bounce {
-    animation-name: bounce;
-    animation-duration: 0.75s;
-}
-
 .sheet-btn {
     display: flex;
     flex-direction: column;
@@ -77,5 +77,12 @@ export default class SheetBtn extends Vue {
             height: 18px;
         }
     }
+}
+
+.show-board {
+//   animation-name: slideInUp;
+//   animation-duration: 2s;
+//   bottom: 75%;
+//   display: flex;
 }
 </style>

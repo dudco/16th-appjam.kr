@@ -1,5 +1,5 @@
 <template>
-    <div class="board">
+    <div class="board" :class="{show, leave: !show}">
         <div class="board-nav">
             <span @click="clickMenu(1)" :class="{select: selected == 1}">주제확인</span>
             <span @click="clickMenu(2)" :class="{select: selected == 2}">최종 결과물 제출</span>
@@ -171,11 +171,14 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class Board extends Vue {
+    @Prop()
+    show!: boolean
+
     selected = 1;
     subSelected = 1;
     
     created() {
-        console.log("Board!");
+        console.log(this.show);
     }
     clickMenu(value: number) {
         this.selected = value;
@@ -187,7 +190,31 @@ export default class Board extends Vue {
 }
 </script>
 <style lang="scss">
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .board {
+    animation: fadeOut;
+    animation-duration: 2s;
+
+    display: none;
     position: absolute;
     top: calc(50% - 300px);
     left: calc(50% - 390px);
@@ -368,5 +395,10 @@ export default class Board extends Vue {
             }
         }
     }
+}
+.show {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  display: block;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
     <div class="test">
         <clock :deadLine="'Aug 19 2018 08:30:00 GMT+0900 (한국 표준시)'" />
-        <sheet-btn />
-        <board />
+        <sheet-btn :btnClick="sheetBtnClick" :isShow="showBoard"/>
+        <board :show="showBoard"/>
         <star />
     </div>
 </template>
@@ -12,7 +12,11 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component
 export default class App extends Vue {
-    
+    showBoard = false;
+    sheetBtnClick() {
+        console.log("asdf")
+        this.showBoard = !this.showBoard;
+    }
 }
 </script>
 
