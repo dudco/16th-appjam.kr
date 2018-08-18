@@ -2,9 +2,10 @@
     <div class="board" :class="{'show': isShow, 'leave': isLeave}">
         <div class="board-nav">
             <span @click="clickMenu(1)" :class="{select: selected == 1}">주제확인</span>
-            <span @click="clickMenu(2)" :class="{select: selected == 2}">최종 결과물 제출</span>
-            <span @click="clickMenu(3)" :class="{select: selected == 3}">서비스 조사</span>
-            <span @click="clickMenu(4)" :class="{select: selected == 4}">페이스북</span>
+            <span @click="clickMenu(2)" :class="{select: selected == 2}">팀빌딩 문서</span>
+            <span @click="clickMenu(3)" :class="{select: selected == 3}">결과물 제출</span>
+            <span @click="clickMenu(4)" :class="{select: selected == 4}">서비스 조사</span>
+            <span @click="clickMenu(5)" :class="{select: selected == 5}">페이스북</span>
         </div>
         <div class="board-sub-menu" :class="`sel${selected}`">
             <div v-if="selected == 1">
@@ -12,16 +13,20 @@
                 <span :class="{select: subSelected == 2}" @click="clickSubMenu(2)">미래산업</span>
             </div>
             <div v-if="selected == 2">
-                <span :class="{select: subSelected == 1}" @click="clickSubMenu(1)">생활</span>
-                <span :class="{select: subSelected == 2}" @click="clickSubMenu(2)">게임</span>
-                <span :class="{select: subSelected == 3}" @click="clickSubMenu(3)">미래산업</span>
+                <!-- <span :class="{select: subSelected == 1}" @click="clickSubMenu(1)">생활</span> -->
+                <!-- <span :class="{select: subSelected == 2}" @click="clickSubMenu(2)">게임</span> -->
+                <!-- <span :class="{select: subSelected == 3}" @click="clickSubMenu(3)">미래산업</span> -->
             </div>
             <div v-if="selected == 3">
-                <span :class="{select: subSelected == 1}" @click="clickSubMenu(1)">생활</span>
-                <span :class="{select: subSelected == 2}" @click="clickSubMenu(2)">게임</span>
-                <span :class="{select: subSelected == 3}" @click="clickSubMenu(3)">미래산업</span>
+                <span :class="{select: subSelected == 1}" @click="clickSubMenu(1)">중간 제출</span>
+                <span :class="{select: subSelected == 2}" @click="clickSubMenu(2)">최종 제출</span>
             </div>
             <div v-if="selected == 4">
+                <!-- <span :class="{select: subSelected == 1}" @click="clickSubMenu(1)">생활</span> -->
+                <!-- <span :class="{select: subSelected == 2}" @click="clickSubMenu(2)">게임</span> -->
+                <!-- <span :class="{select: subSelected == 3}" @click="clickSubMenu(3)">미래산업</span> -->
+            </div>
+            <div v-if="selected == 5">
                 
             </div>
         </div>
@@ -32,53 +37,72 @@
                     <span>작사 다이나믹 듀오(Dynamic Duo) 작곡</span>
                     <span>프라이머리(Primary), 개코 편곡 프라이머리(Primary)</span>
                     <span>
-                        여보세요? 어, 동훈아. 나와. 어 개코랑 같이있어 지금. 아냐 우리끼리 소주나 한 잔 하지 뭐. 소박하게. 클럽? 에이, 너 가면 또 잠들 거잖아. 하하. yeah. 일 끝나서 친구들과 한 잔 내일은 노는 토요일이니깐 일 얘기 사는 얘기 재미난 얘기 시간가는 줄 모르는 이 밤 술기운이 올라오니 사내놈들끼린 결국엔 여자 얘기  적적해서 서로의 전화기를 꺼내 번호목록을 뒤져보지  너는 지금 뭐해, 자니, 밖이야? 뜬금없는 문자를 돌려보지 난 어떻게 해볼까란 뜻은 아니야 그냥 심심해서 그래 아니 외로워서 그래 술자리가 끝나가 3차로 이동하기 전인데 문자는(아 진짜 안 온다) 일분 칠분 십분 and 이십분 담배와 애만 태우는 지금 답장 왔어 오빠 나 남친 생겼어 늦었어 좀 일찍 연락하지 그랬어 담에 봐 그냥 담에 낮에 봐 후회할거 알면서 전 여자친구에게 너는 지금 뭐해, 자니, 밖이야? 뜬금없는 문자를 보내보지 난 어떻게 해볼까란 뜻은 아니야 그냥 심심해서 그래 아니 외로워서 그래
-
-                        (최자)
-                        아 진짜 술만 들어가면 왜 이렇게 들뜨는지
-                        나도 잘 몰라 난 왜 그녀들을 부르는지 갑자기 허전해
-                        작업을 걸어대지 여기저기 오늘 밤 나 자존심 다 버렸네
-                        전 여친한테 더럽게 달라붙어 봤지만 그녀는 버럭해
-                        너 진짜 철없게 언제까지 이럴래 미안해 갑자기 외로운걸 어떡해 
-                        껄떡대 껄떡대 나 여기저기 다
-                        맘껏 들쑤시고 다녀 온 거릴 거릴 다 
-                        또 잠들었어(오) 프라이머리가
-                        텐션 떨어진다 동훈아 넌 저리가
-                        이제 해가 나올 시간이 되가니까 
-                        눈이 녹듯이 사그라드는 기대감
-                        너무 지치고 피곤해 자고 싶어 이제 나 첫차를 타고 졸며 집에가
-
-                        (개코)
-                        창밖에 앉아 밖을 바라보네 
-
-                        (최자)
-                        나는 꾸벅꾸벅 조는데
-
-                        (개코)
-                        사람들은 하루를 시작해 
-
-                        (최자)
-                        눈부셔 아침해를 보는게
-
-                        (개코)
-                        정신은 맑아지지 않는 기분 
-
-                        (최자)
-                        아직도 바쁜 내 손가락
-
-                        (개코)
-                        아직 손은 바쁘게 움직이지 
-
-                        (최자) 
-                        해장국이나 먹고 갈래 오빠랑 
-
-                        (개코)
-                        너는 지금 뭐해, 자니, 밖이야?
+                        일 끝나서 친구들과 한잔
+                        내일은 노는 토요일이니깐
+                        일 얘기 사는 얘기 재미난 얘기
+                        시간가는 줄 모르는 이 밤
+                        술기운이 올라오니
+                        사내놈들끼린 결국엔 여자 얘기
+                        적적해서 서로의 전화기를 꺼내
+                        번호목록을 뒤져보지
+                        너는 지금 뭐해 자니 밖이야
+                        뜬금없는 문잘 돌려보지 난
+                        어떻게 해볼까란 뜻은 아니야
+                        그냥 심심해서 그래
+                        아니 외로워서 그래
+                        술자리가 끝나가
+                        3차로 이동하기 전인데 문자는
+                        일분 칠분 십분 and 이십분
+                        담배와 애만 태우는 지금
+                        답장 왔어
+                        오빠 나 남친 생겼어
+                        늦었어
+                        좀 일찍 연락하지 그랬어
+                        담에 봐
+                        그냥 담에 낮에 봐
+                        후회할거 알면서
+                        전 여자친구에게
+                        너는 지금 뭐해 자니 밖이야
                         뜬금없는 문자를 보내보지 난
                         어떻게 해볼까란 뜻은 아니야
-                        그냥 심심해서 그래 아니 외로워서 그래
-
-                        가지마 제발
+                        그냥 심심해서 그래
+                        아니 외로워서 그래
+                        아 진짜 술만 들어가면
+                        왜 이렇게 들뜨는지
+                        나도 잘 몰라 
+                        난 왜 그녀들을 부르는지
+                        갑자기 허전해
+                        작업을 걸어대지
+                        여기저기 오늘 밤
+                        나 자존심 다 버렸네
+                        전 여친한테 더럽게 
+                        달라붙어 봤지만
+                        그녀는 버럭해
+                        너 진짜 철없게 언제까지 이럴래
+                        미안해 갑자기 외로운걸 어떡해
+                        껄떡대 껄떡대
+                        나 여기저기 다
+                        맘껏 들쑤시고 다녀
+                        온 거릴 거릴 다
+                        또 잠들었어 오 
+                        프라이머리가
+                        텐션 떨어진다
+                        동훈아 넌 저리가
+                        이제 해가 나올 시간이 되니까
+                        눈이 녹듯이 사그라드는 기대감
+                        너무 지치고 피곤해
+                        자고 싶어 이제 나 
+                        첫차를 타고 졸며 집에 가
+                        창밖에 앉아 밖을 바라보네 
+                        사람들은 하루를 시작해
+                        정신은 맑아지지 않는 기분
+                        아직 손은 바쁘게 움직이지
+                        너는 지금 뭐해 자니 밖이야
+                        뜬금없는 문자를 보내보지 난
+                        어떻게 해볼까란 뜻은 아니야
+                        그냥 심심해서 그래
+                        아니 외로워서 그래
+                        가지마 제발 심심해서 그래 
                     </span>
                 </div>
                 <div v-if="subSelected == 2">
@@ -154,13 +178,27 @@
                     </span>
                 </div>
             </div>
-            <div v-if="selected == 2">
-                최종 결과물 제출
+            <div v-if="selected == 2" class="team">
+                <div>팀빌딩</div>
+                <a href="https://bit.ly/2nO03Bu">https://bit.ly/2nO03Bu</a>
             </div>
             <div v-if="selected == 3">
-                서비스 조사
+                <div v-if="subSelected == 1">
+                    <div>중간제출</div>
+                    <a href="https://bit.ly/2L7b5L8">https://bit.ly/2L7b5L8</a>
+                </div>
+                <div v-if="subSelected == 2">
+                    <div>최종제출</div>
+                    <a href="https://bit.ly/2vZJEOX">https://bit.ly/2vZJEOX</a>
+                </div>
             </div>
             <div v-if="selected == 4">
+                <div>
+                    서비스조사
+                </div>
+                <a href="https://bit.ly/2MmKbVj">https://bit.ly/2MmKbVj</a>
+            </div>
+            <div v-if="selected == 5">
                 페이스북
             </div>
         </div>
@@ -267,17 +305,16 @@ export default class Board extends Vue {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 20px;
+            margin: 20px 10px 20px 10px;
             border: 0px solid #11161d;
             border-radius: 30px;
             cursor: pointer;
             
             &.select {
-                height: calc(100% - 20px);
+                height: calc(100% - 30px);
                 font-size: 16px;
                 background-color: #11161d;
                 color: white;
-                
             }
         }
     }
@@ -300,34 +337,42 @@ export default class Board extends Vue {
         
         &.sel1 {
             & > div {
-            margin-left: 97.5px - 45px;
+            margin-left: 78px - 45px;
             }
             &::after {
-                left: 97.5px - 5px;
+                left: 78px - 5px;
             }
         }
         &.sel2 {
             & > div {
-                margin-left: 195px + 97.5px - 45px;
+                margin-left: 156px + 78px - 45px;
             }
             &::after {
-                left: 195px + 97.5px - 5px;
+                left: 156px + 78px - 5px;
             }
         }
         &.sel3 {
             & > div {
-            margin-left: 195px + 195px + 97.5px - 45px;
+            margin-left: 156px + 156px + 78px - 45px;
             }
             &::after {
-                left: 195px + 195px + 97.5px - 5px;
+                left: 156px + 156px + 78px - 5px;
             }
         }
         &.sel4 {
             & > div {
-            margin-left: 195px + 195px + 195px + 97.5px - 45px;
+            margin-left: 156px + 156px + 156px + 78px - 45px;
             }
             &::after {
-                left: 195px + 195px + 195px + 97.5px - 5px;
+                left: 156px + 156px + 156px + 78px - 5px;
+            }
+        }
+        &.sel5 {
+            & > div {
+            margin-left: 156px + 156px + 156px + 156px + 78px - 45px;
+            }
+            &::after {
+                left: 156px + 156px + 156px + 156px + 78px - 5px;
             }
         }
 
@@ -365,9 +410,9 @@ export default class Board extends Vue {
     }
 
     & > div:nth-child(3) {
-        padding: 60px 100px 60px 100px;
         color: white;
         font-family: 'Noto Sans Kr';
+        padding: 60px 100px 60px 100px;
 
         overflow-y: scroll;
         height: 477px;
@@ -412,6 +457,34 @@ export default class Board extends Vue {
                 font-weight: 300;
                 font-size: 17px;
                 font-stretch: normal;
+            }
+        }
+
+        & > div {
+            & > div {
+                font-size: 50px;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+
+            & >  a {
+                font-size: 24px;
+                color: white;
+                text-decoration: none;
+            }
+
+            & > div {
+                & > div {
+                    font-size: 50px;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+
+                & >  a {
+                    font-size: 24px;
+                    color: white;
+                    text-decoration: none;
+                }
             }
         }
     }

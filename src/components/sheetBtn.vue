@@ -134,6 +134,7 @@ export default class SheetBtn extends Vue {
     position: absolute;
     bottom: 0%;
     margin-bottom: 45px;
+    cursor: pointer;
     & > img {
         &:nth-child(1) {
             width: 70px;

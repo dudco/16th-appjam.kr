@@ -14,7 +14,6 @@ import {Component, Vue} from 'vue-property-decorator';
 export default class App extends Vue {
     showBoard = false;
     sheetBtnClick() {
-        console.log("asdf")
         this.showBoard = !this.showBoard;
     }
 }
